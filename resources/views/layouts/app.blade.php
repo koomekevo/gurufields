@@ -19,6 +19,7 @@
 <body>
     <div id="app">
         <main class="py-4">
+            @include('layouts.partial._navigation')
             @yield('content')
         </main>
     </div>
