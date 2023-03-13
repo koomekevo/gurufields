@@ -10,4 +10,10 @@ class Area extends Model
 {
     use HasFactory;
     use NodeTrait;
+    protected $fillable = ['name', 'slug'];
+
+    public function getRouteKeyName() 
+    {
+        return 'slug';
+    }
 }
