@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     {
         \App\Models\Area::creating(function ($area) {
             $prefix = $area->parent ? $area->parent->name . ' ' : '';
-            $area->slug = str_slug($prefix . $area->name);
+            $area->slug = Str::slug($prefix . $area->name);
         });
     }
 }
