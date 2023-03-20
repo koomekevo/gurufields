@@ -540,5 +540,9 @@ class AreaTableSeeder extends Seeder
                 ],
             ]
         ];
+
+        foreach($areas as $area) {
+            \App\Area::create($area);
+        }
     }
 }
